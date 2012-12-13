@@ -45,7 +45,11 @@
 \usepackage{hyperref}  % yups, URLs everwhere...
 \usepackage{xcolor}  % ... and color them links
 \definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
-\hypersetup{colorlinks,linkcolor={dark-blue},citecolor={dark-blue},urlcolor={dark-blue}}
+\definecolor{emerald}{RGB}{0,155,119}
+\definecolor{tangerinetango}{RGB}{225,82,61}
+\definecolor{chilipepper}{RGB}{155,35,53}
+\definecolor{deepreddishbrown}{RGB}{89,0,0}
+\hypersetup{colorlinks,linkcolor={deepreddishbrown},citecolor={deepreddishbrown},urlcolor={deepreddishbrown}}
 
 \usepackage{ifxetex}
 \ifxetex
@@ -62,7 +66,7 @@
   % Comment out the previous statement and uncomment the following line to use the
   % Linux Libertine font (it has nice lignatures).
   % Make sure to have the `ttf-linux-libertine` package installed on Ubuntu.
-%  \setmainfont[Mapping=tex-text, Numbers=OldStyle, Ligatures={Common,Contextual}]{Linux Libertine O}
+  \setmainfont[Mapping=tex-text, Numbers=OldStyle, Ligatures={Common,Contextual}]{Linux Libertine O}
   \usepackage[protrusion]{microtype}  % needs an experimental and impposible to find package for xetex
 \else
   \usepackage{tgpagella}  % this case we lack lower case numbers, ligatures and some typographic niceties
