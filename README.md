@@ -1,4 +1,4 @@
-# My Latex resume
+# My LaTeX resume
 
 This is a fork of the great work done by [Cies Breijs](https://github.com/cies/resume). I already wrote my master thesis in LaTeX, so naturally I am now writing my resume in it as well. I decided to remix an existing project in this case. I like its overall look very much, it has this nice "research paper" quality to it.
 
