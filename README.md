@@ -11,8 +11,12 @@ looks slightly better with XeLaTeX.
 In recent Ubuntu versions you simply clone this project, change
 directory to the root of the project and do:
 
-        sudo apt-get install texlive-xetex texlive-latex-recommended tex-gyre
+        sudo apt-get install texlive-xetex texlive-latex-recommended tex-gyre ttf-linux-libertine
         ./pdflatex *-resume.pdf
+
+For Arch Linux, install these packages:
+
+        sudo pacman -S texlive-core texlive-bin tex-gyre-fonts texlive-latexextra ttf-linux-libertine
 
 If all went well an updated version of the PDF is found in your current
 working directory, alongside a bunch of `.log` and `.aux` files that
