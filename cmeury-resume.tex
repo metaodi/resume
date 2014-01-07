@@ -1,25 +1,26 @@
 % LaTeX source of my resume
 % =========================
 
-% Commented for easy reuse... ;)
-
 % See the `README.md` file for more info.
-
 % This file is licensed under the CC-NC-ND Creative Commons license.
-
 
 % start a document with the here given default font size and paper size
 \documentclass[10pt,a4paper]{article}
 
-% include the `tex` instructions that takes care of loading packages and defining commands
-\include{resume-commands}
+% Set the page margins.
+\usepackage[a4paper,margin=0.75in]{geometry}
 
+% Setup the language.
+\usepackage[english]{babel}
+\hyphenation{Some-long-word}
 
+% Makes resume-specific commands available.
+\usepackage{resume}
 
 \begin{document}  % begin the content of the document
 \sloppy  % this to relax whitespacing in favour of straight margins
 
-\maintitle{Cedric Meury}{November 9, 1983}  % title on top of the document
+\maintitle{Cedric Meury}{November 9, 1983}{Last update on \today}  % title on top of the document
 
 \nobreakvspace{0.3em}  % add some page break averse vertical spacing
 
