@@ -20,30 +20,35 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
+%
+% This style contains some commands for making a LaTeX resume
+%
+% Please refer to the README.md file for more info.
+%
+% This project is currently hosted at: https://github.com/cies/resume
+%
 
-% Some commands for making a LaTeX resume
-% =======================================
 
-% Commented ;)
-
-% See the README.md file for more info
-
-
-
-% \documentclass[10pt,a4paper]{article}  % i do this in the document itself
 
 
 %%% LOAD AND SETUP PACKAGES
 
-\usepackage[a4paper,margin=0.75in]{geometry}
-\usepackage{mdwlist}   % to finetue lists with a inline heading and indented content (see Experiences)
-\usepackage{multicol}  % for multiple column text
-\usepackage{relsize}   % for \textscale, which I prefer over \sc (small caps), see my \acr command
-\usepackage[english]{babel}
-\hyphenation{Some-long-word}
 
-\usepackage{hyperref}  % yups, URLs everwhere...
-\usepackage{xcolor}  % ... and color them links
+
+% To finetune lists with a inline heading and indented content.
+% See the Experiences section in the example.
+\usepackage{mdwlist}
+
+% For multiple column text.
+\usepackage{multicol}
+
+% For \textscale, which I prefer over \sc (small caps).
+% See the \acr command definition below.
+\usepackage{relsize}
+
+% Setup the hyperrefs witht he right color.
+\usepackage{hyperref}  
+\usepackage{xcolor}
 \definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 \definecolor{emerald}{RGB}{0,155,119}
 \definecolor{tangerinetango}{RGB}{225,82,61}
@@ -51,9 +56,13 @@
 \definecolor{deepreddishbrown}{RGB}{89,0,0}
 \hypersetup{colorlinks,linkcolor={deepreddishbrown},citecolor={deepreddishbrown},urlcolor={deepreddishbrown}}
 
+% XeTeX specific stuff with fall-back.
 \usepackage{ifxetex}
 \ifxetex
+
   \usepackage{fontspec}
+  
+  % the main font, with all features on
   \setmainfont
     [ ExternalLocation ,
       Mapping          = tex-text ,
@@ -63,14 +72,35 @@
       ItalicFont       = texgyrepagella-italic.otf ,
       BoldItalicFont   = texgyrepagella-bolditalic.otf ]
     {texgyrepagella-regular.otf}
+    
+  % same like the main font, but without old-style nums
+  \newfontfamily\newnums
+    [ ExternalLocation ,
+      Mapping          = tex-text ,
+      Ligatures        = {Common,Contextual} ,
+      BoldFont         = texgyrepagella-bold.otf ,
+      ItalicFont       = texgyrepagella-italic.otf ,
+      BoldItalicFont   = texgyrepagella-bolditalic.otf ]
+    {texgyrepagella-regular.otf}
   % Comment out the previous statement and uncomment the following line to use the
   % Linux Libertine font (it has nice lignatures).
   % Make sure to have the `ttf-linux-libertine` package installed on Ubuntu.
-  \setmainfont[Mapping=tex-text, Numbers=OldStyle, Ligatures={Common,Contextual}]{Linux Libertine O}
-  \usepackage[protrusion]{microtype}  % needs an experimental and impposible to find package for xetex
+%  \setmainfont[Mapping=tex-text, Numbers=OldStyle, Ligatures={Common,Contextual}]{Linux Libertine O}
+
+  % needs an experimental and impossible to find package for xetex
+  \usepackage[protrusion]{microtype}
+
 \else
-  \usepackage{tgpagella}  % this case we lack lower case numbers, ligatures and some typographic niceties
+
+  % this case we likely use the `pdftex` back-end
+  % therefor we lack:
+  %  * lower case numbers,
+  %  * ligatures and
+  %  * some typographic niceties
+  % We do make use of the possibility to use `microtype`
+  \usepackage{tgpagella}
   \usepackage[expansion,protrusion]{microtype}
+
 \fi
 
 
@@ -82,10 +112,11 @@
 \xspaceskip7pt  % some more spacing between sentences (use "i.e.\ " or "with SQL\@. " in case of errors)
 
 
+
 %%% CUSTOM COMMANDS
 
 % main title (name) with subtitle (date)
-\newcommand*\maintitle[2]{\noindent{\LARGE \textbf{#1}}\ \ \ \emph{#2}}
+\newcommand\maintitle[3]{\vbox to 0pt{\hfill\scriptsize\color{gray} #3}\vspace{-0.4em}\noindent{\LARGE \textbf{#1}}\ \ \ \emph{#2}}
 
 % title for the root sections (experience, education, etc) of the resume
 \newcommand*\roottitle[1]{\subsection*{#1}\vspace{-0.3em}\nopagebreak[4]}
@@ -139,18 +170,10 @@
 % non space that allows line breaks
 \newcommand*{\nsp}{\hskip0pt}
 
+
+
 %%% MORE SPECIFIC COMMANDS
 
 % CPP command (found it in some corner of the internet and decided to use it)
-\newcommand{\CPP}{C\nolinebreak[4]\hspace{-.04em}\raisebox{.20ex}{\footnotesize\bf++} }
+\newcommand{\CPP}{C\nolinebreak[4]\hspace{-.04em}\raisebox{.20ex}{\footnotesize\bf++}}
 
-% KTurtle command :)
-\newcommand{\KTurtle}{\acr{KT}urtle }
-
-
-
-% % these are in the document itself:
-%
-% \begin{document}
-% ...the document text...
-% \end{document}

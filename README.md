@@ -11,13 +11,15 @@ looks slightly better with XeLaTeX.
 In recent Ubuntu versions you simply clone this project, change
 directory to the root of the project and do:
 
-        sudo apt-get install texlive-xetex tex-gyre texlive-latex-recommended
-        ./build.sh
+        sudo apt-get install texlive-xetex texlive-latex-recommended tex-gyre
+        ./pdflatex *-resume.pdf
 
-If all went well an updated version of the PDF is found in your current working directory.
+If all went well an updated version of the PDF is found in your current
+working directory, alongside a bunch of `.log` and `.aux` files that
+you can safely ignore.
 
 ## Terms of sharing
 
-Feel free to use, copy, fork, share, study and/or modify it because the LaTeX source code of the `resume-commands.tex` file is [MIT](http://en.wikipedia.org/wiki/MIT_License) licensed.
+Feel free to use, copy, fork, share, study and/or modify it because the LaTeX source code of the `resume.sty` file is [MIT](http://en.wikipedia.org/wiki/MIT_License) licensed.
 
 The text of my resume in the `cmeury-resume.tex` file is [CC-NC-ND](http://creativecommons.org/licenses/by-nc-nd/3.0/) licensed.
